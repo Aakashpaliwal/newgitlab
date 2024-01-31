@@ -1,0 +1,182 @@
+input[type="number"] {
+    text-align: left;
+}
+.custom-modal-react {
+    padding: 20px;
+}
+.custom-edit-btn {
+  margin: 0 10px;
+}
+   
+  .field {
+    display: flex;
+    flex-flow: column-reverse;
+    /* margin-bottom: 1em; */
+    margin: 10px 0;
+  }
+  /**
+  * Add a transition to the label and input.
+  * I'm not even sure that touch-action: manipulation works on
+  * inputs, but hey, it's new and cool and could remove the 
+  * pesky delay.
+  */
+  label, input {
+    transition: all 0.2s;
+    touch-action: manipulation;
+  }
+  
+  input {
+    /* font-size: 1.5em; */
+    line-height: 2em;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    font-family: inherit;
+    -webkit-appearance: none;
+    border-radius: 0;
+    padding: 0;
+    cursor: text;
+  }
+  
+  input:focus {
+    outline: 0;
+    border-bottom: 1px solid #666;
+  }
+  
+  label {
+    text-transform: capitalize;
+    font-size: 12px;
+    /* letter-spacing: 0.05em; */
+  }
+  /**
+  * Translate down and scale the label up to cover the placeholder,
+  * when following an input (with placeholder-shown support).
+  * Also make sure the label is only on one row, at max 2/3rds of the
+  * field—to make sure it scales properly and doesn't wrap.
+  */
+  input:placeholder-shown + label {
+    cursor: text;
+    /* max-width: 66.66%; */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transform-origin: left bottom;
+    transform: translate(0, 2.125rem) scale(1.5);
+  }
+  /**
+  * By default, the placeholder should be transparent. Also, it should 
+  * inherit the transition.
+  */
+  ::-webkit-input-placeholder {
+    opacity: 0;
+    transition: inherit;
+  }
+  /**
+  * Show the placeholder when the input is focused.
+  */
+  input:focus::-webkit-input-placeholder {
+    opacity: 1;
+  }
+  /**
+  * When the element is focused, remove the label transform.
+  * Also, do this when the placeholder is _not_ shown, i.e. when 
+  * there's something in the input at all.
+  */
+  input:not(:placeholder-shown) + label,
+  input:focus + label {
+    transform: translate(0, 0) scale(1);
+    cursor: pointer;
+  }
+
+  /********************************PRODUCT CSS*******************************/
+  .inp {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    /* max-width: 280px; */
+  }
+  .inp_position_top_9 {
+    top: 9px;
+  }
+  .inp .label {
+    position: absolute;
+    top: 16px;
+    left: 0;
+    font-size: 18px;
+    color: #9098a9;
+    font-weight: 500;
+    transform-origin: 0 0;
+    transition: all 0.2s ease;
+  }
+  .inp .border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: #07f;
+    transform: scaleX(0);
+    transform-origin: 0 0;
+    transition: all 0.15s ease;
+  }
+  .inp input {
+    -webkit-appearance: none;
+    width: 100%;
+    border: 0;
+    font-family: inherit;
+    padding: 12px 0;
+    height: 48px;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 2px solid #c8ccd4;
+    background: none;
+    border-radius: 0;
+    color: #223254;
+    transition: all 0.15s ease;
+  }
+  .inp input:hover {
+    background: rgba(34,50,84,0.03);
+  }
+  .inp input:not(:placeholder-shown) + span {
+    color: #5a667f;
+    transform: translateY(-26px) scale(0.75);
+  }
+  .inp input:focus {
+    background: none;
+    outline: none;
+  }
+  .inp input:focus + span {
+    color: #07f;
+    transform: translateY(-26px) scale(0.75);
+  }
+  .inp input:focus + span + .border {
+    transform: scaleX(1);
+  }
+  .custom-product-field .border {
+    border : solid 1px #07f!important;
+  }
+   .data_loading {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border: 2px solid rgba(100, 100, 100, .2);
+      border-radius: 50%;
+      border-top-color: rgba(100, 100, 100, .7);
+      animation: spin 1s ease-in-out infinite;
+      -webkit-animation: spin 1s ease-in-out infinite;
+    /*  left: calc(50% - 15px);
+      top: calc(50% - 15px);
+      position: fixed;*/
+      z-index: 1;
+    }
+
+    @keyframes spin {
+      to {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+
+    @-webkit-keyframes spin {
+      to {
+        -webkit-transform: rotate(360deg);
+      }
+    }

@@ -1,0 +1,189 @@
+/* @import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'); */
+@import url('https://cdn.lineicons.com/1.0.1/LineIcons.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css');
+.mid-sec {
+    margin-top: 50px;
+}
+.lni-trash {
+    font-size: 30px;
+    cursor: pointer;
+    /* color: #d81a60; */
+}
+.print-sec .btn a{
+    color: #fff!important;
+}
+.print-sec .btn {
+    float: right;
+    margin-top: 20px;
+}
+.parent-wrapper {
+    margin: 20px 0;
+}
+/* hr {
+    background: #d81a60;
+} */
+.lni-plus-btn {
+    background: #28a745!important;
+    border: solid 1px #28a745!important;
+float: left!important;
+
+}
+.lni-plus {
+    color: #fff;
+}
+.modal-content {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: none!important;;
+    border-radius: .3rem;
+    outline: 0;
+}
+/*.modal-table-head th{
+ background: red!important;
+ color: #fff;
+}*/
+table > caption {
+    display: none;
+}
+.from-upper-sec {
+    background-color: #fff;
+    border: 0 solid #eee;
+    border-radius: 0;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+
+}
+.company-detail {
+    padding-bottom: 20px;
+}
+
+/***print css***/
+/* @media screen {
+    #printSection {
+        display: none;
+    }
+  }
+  
+  @media print {
+    body * {
+      visibility:hidden;
+    }
+    #printSection, #printSection * {
+      visibility:visible;
+    }
+    #printSection {
+      position:absolute;
+      left:0;
+      top:0;
+    }
+  } */
+
+  @media print {
+    body.modalprinter * {
+        visibility: hidden;
+    }
+
+    body.modalprinter .modal-dialog.focused {
+        position: absolute;
+        padding: 0;
+        margin: 0;
+        left: 0;
+        top: 0;
+        font: Georgia, "Times New Roman", Times, serif;
+        /* font-weight: bold; */
+        font-size: 1.5em;
+    }
+
+    body.modalprinter .modal-dialog.focused .modal-content {
+        border-width: 0;
+    }
+
+    body.modalprinter .modal-dialog.focused .modal-content .modal-header .modal-title,
+    body.modalprinter .modal-dialog.focused .modal-content .modal-body,
+    body.modalprinter .modal-dialog.focused .modal-content .modal-body * {
+        visibility: visible;
+        width: 100%;
+    }
+
+    body.modalprinter .modal-dialog.focused .modal-content .modal-header,
+    body.modalprinter .modal-dialog.focused .modal-content .modal-body {
+        padding: 0;
+        width: 100%;
+    }
+
+    body.modalprinter .modal-dialog.focused .modal-content .modal-header .modal-title {
+        margin-bottom: 20px;
+    }
+}
+/**************************experimental modal css*****************************/
+/*.custom_modal_width_invoice {
+    width : 250px!important;
+    max-width: 250px!important;
+}
+.custom_modal_width_invoice table {
+    width:250px;
+    max-width: 250px;
+    word-break: break-all;
+}
+.custom_modal_table_invoice_thead > th{
+ width: 20px;
+    max-width: 20px;
+    word-break: break-all!important;
+}
+.custom_modal_table_invoice_thead > td{
+ width: 20px;
+    max-width: 20px;
+    word-break: break-all!important;
+}*/
+@media print {
+     html, body {
+     border: 1px solid white;
+     /*height: 99%;*/
+     page-break-after: avoid !important;
+     page-break-before: avoid !important;
+  }
+    .custom_modal_width_invoice {
+    width : 250px!important;
+    max-width: 250px!important;
+    margin-left: 10px!important;
+    color: #989898!important;
+
+    /*height: auto;
+    word-break: break-all;*/
+}
+.custom_modal_width_invoice_table {
+    color: #989898!important;
+}
+.company-detail {
+    color: #989898!important;
+}
+table {
+    color: #989898!important;
+}
+ /*   .custom_modal_width_invoice table {
+    width:250px!important;
+    max-width: 250px!important;
+    word-break: break-all;
+}*/
+  .custom_modal_width_invoice .company-detail {
+    word-break: break-all!important;
+}
+/*.footer-price-content .item_price_p {
+    margin-left: 150px!important;
+}*/
+/*.custom_modal_table_invoice_thead td{
+ width: 20px!important;
+    max-width: 20px!important;
+    word-break: break-all!important;
+}*/
+
+}
